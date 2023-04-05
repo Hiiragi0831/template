@@ -9,7 +9,7 @@ import { paths } from '../store';
  * @see https://github.com/cascornelissen/svg-spritemap-webpack-plugin
  */
 
-export const SVGSpritemap = new SVGSpritemapPlugin(`${paths.src.svgSprites}/**/*.svg`, {
+export const SVGSpritemap = new SVGSpritemapPlugin(`src/assets/svg-sprites/**/*.svg`, {
     // FIX IT!!! styles: `${paths.src.styles}/_sprites.scss`,
     styles: `src/styles/_sprites.scss`,
     output: {
