@@ -64,6 +64,7 @@
         "postcss-loader": "^7.0.2",
         "postcss-preset-env": "^8.0.1",
         "postcss-scss": "4.0.6",
+        "pre-commit": "1.2.2",
         "pug": "^3.0.2",
         "pug-lint": "2.6.0",
         "remove-files-webpack-plugin": "1.5.0",
@@ -90,11 +91,13 @@
         "zip-a-folder": "1.1.5"
     },
     "dependencies": {
+        "@barba/core": "2.9.7",
         "body-scroll-lock": "4.0.0-beta.0",
         "lodash.debounce": "4.0.8",
         "lodash.throttle": "4.1.1",
         "lozad": "1.16.0",
-        "normalize.css": "8.0.1",
+        "ninelines-sharing": "1.5.8",
+        "scroll-depth": "1.2.0",
         "ua-parser-js": "1.0.33"
     },
     "husky": {

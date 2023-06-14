@@ -3,15 +3,15 @@
 */
 
 const init = () => {
-    const year = new Date().getFullYear();
+	const year = new Date().getFullYear();
 
-    if (document.querySelector('[data-actual-year]')) {
-        document.querySelectorAll('[data-actual-year]').forEach((item) => {
-            item.textContent = year;
-        });
-    }
+	if (document.querySelector('[data-actual-year]')) {
+		document.querySelectorAll('[data-actual-year]').forEach((item) => {
+			item.textContent = year;
+		});
+	}
 };
 
 export default {
-    init,
+	init,
 };

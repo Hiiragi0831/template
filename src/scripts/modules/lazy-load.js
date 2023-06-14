@@ -16,7 +16,7 @@ const trigger = (img) => {
 };
 
 const add = (images) => {
-    observer = lozad(images, {
+	observer = lozad(images, {
 		rootMargin: `${innerHeight}px`,
 		threshold: 0, // ratio of element convergence
 		enableAutoReload: true, // it will reload the new image when validating attributes changes
@@ -33,15 +33,15 @@ const add = (images) => {
 
 	observer.observe();
 
-    return observer;
+	return observer;
 };
 
 const init = () => {
-    add('.js-lazy');
+	add('.js-lazy');
 };
 
 export default {
 	init,
-    add,
+	add,
 	trigger,
 };

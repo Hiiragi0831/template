@@ -7,30 +7,30 @@
 const isSupported = () => !(!!window.MSInputMethodContext && !!document.documentMode);
 
 const setProp = () => {
-    document.documentElement.style.setProperty('--vh', `${innerHeight}px`);
+	document.documentElement.style.setProperty('--vh', `${innerHeight}px`);
 };
 
 const resize = () => {
-    if (!isSupported()) {
-        return;
-    }
+	if (!isSupported()) {
+		return;
+	}
 
-    setProp();
+	setProp();
 };
 
 const init = () => {
-    if (!isSupported()) {
-        return;
-    }
+	if (!isSupported()) {
+		return;
+	}
 
-    setProp();
+	setProp();
 
-    setTimeout(setProp, 1000);
+	setTimeout(setProp, 1000);
 
-    window.addEventListener('load', setProp);
+	window.addEventListener('load', setProp);
 };
 
 export default {
-    init,
-    resize,
+	init,
+	resize,
 };
