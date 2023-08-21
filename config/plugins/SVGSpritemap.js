@@ -10,18 +10,18 @@ import { paths } from '../store';
  */
 
 export const SVGSpritemap = new SVGSpritemapPlugin(`./src/assets/svg-sprite**/*.svg`, {
-	// FIX IT!!! styles: `${paths.src.styles}/_sprites.scss`,
-	// styles: `src/styles/_sprites.scss`,
-	// output: {
-	//     filename: 'assets/images/[contenthash].svg',
-	//     svgo: {
-	//         plugins: [
-	//             { removeTitle: true },
-	//             { removeStyleElement: true },
-	//         ],
-	//     },
-	// },
-	sprite: {
-		prefix: 'icon-',
-	},
+    // FIX IT!!! styles: `${paths.src.styles}/_sprites.scss`,
+    // styles: `src/styles/_sprites.scss`,
+    // output: {
+    //     filename: 'assets/images/[contenthash].svg',
+    //     svgo: {
+    //         plugins: [
+    //             { removeTitle: true },
+    //             { removeStyleElement: true },
+    //         ],
+    //     },
+    // },
+    sprite: {
+        prefix: 'icon-',
+    },
 });

@@ -13,4 +13,8 @@ block content
 			a(href="./article") article
 			include @components/footer/footer
 			include @components/analytics/analytics
+			+lazyBlur({
+				imgS: `${baseDir}assets/images/home/section-1/1.jpg`,
+				imgL: `${baseDir}assets/images/home/section-1/1.jpg`,
+			})
 			+sharing('vk')

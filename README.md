@@ -39,6 +39,8 @@
 3. [Основные моменты и их возможные исправления](#основные-моменты-и-их-возможные-исправления)
 	1. [Ошибки линтера PUG](ошибки-линтера-pug)
 	2. [Линтер Style](#линтер-style)
+	3. [Настройка stylelint для VC Code](#настройка-stylelint-для-vc-code)
+	4. [Отмена минификации файла HTML после сборки билда](#отмена-минификации-файла-html-после-сборки-билда)
 
 # Работа со сборкой
 
@@ -333,3 +335,25 @@ git config --global core.autocrlf false
 
 ## Линтер Style
 В файле ``.stylelintrc`` есть правило ``"order/properties-order"``, который отвечает за правильную последовательность свойств в стилях. Старайтесь придерживаться этого правила с самого начала, частые коммиты помогут выявлять ошибки в малых количествах, нежели править сотни ошибок перед пушем в конце дня. Со временем выработается привычка писать сразу правильно
+
+## Настройка stylelint для VC Code
+1. Установите расширение [stylelint](https://stylelint.io/)
+2. Переходим в ``extention settings`` и находим раздел ``Stylelint: Config``
+3. В данном разделе переходим по кнопке ``Edit in settings.json`` и в строчке ``"stylelint.config"`` указываем ``null`` (``"stylelint.config": null,``)
+
+Теперь все ошибки линтера будут отображаться во время работы, что сократит время на правки во время коммита. Правила линтера тянутся из файла `.stylelintrc` для проекта.
+
+## Отмена минификации файла HTML после сборки билда
+1. Устанавливаем плагин https://www.npmjs.com/package/beautify-html-webpack-plugin
+2. В корне проекта находим файл ``config/common.js``
+3. Подключаем плагин
+	```javascript
+	import BeautifyHtmlWebpackPlugin from 'beautify-html-webpack-plugin';
+	```
+4. И добавляем его в код после строки ``...plugins.HtmlPages()``. Вместо ``options`` добавляем правила стилизации
+	```javascript
+	plugins.Dashboard,
+    ...plugins.HtmlPages(),
+	new BeautifyHtmlWebpackPlugin(options),
+    plugins.RemoveFiles,
+	```

@@ -13,7 +13,7 @@ import lazyLoad from '@scripts/modules/lazy-load';
 import scrollToAnchor from './modules/scrollToAnchor';
 import lazyBlur from './modules/lazyBlur';
 import analytics from '@components/analytics/analytics';
-// import router from '@components/router/router';
+import router from '@components/router/router';
 import home from '../pages/home/home';
 import article from '../pages/article/article';
 import sharing from '../components/sharing/sharing';
@@ -50,20 +50,22 @@ const scriptsInit = [
 	analytics.init,
 	sharing.init,
 
-	demoRbc.init(),
+	demoRbc.init,
 	home.init,
 	article.init,
 ];
 
 // добавить скрипты для удаленния данных при уходе
-const scriptsDestroy = [];
+const scriptsDestroy = [
+	demoRbc.destroy,
+];
 
 const init = () => {
 	uaParser.init();
 	actualYear.init();
 	vhFix.init();
 	// закоментировать или удалить если SPA поведение не требуется
-	// router.init(scriptsInit, scriptsDestroy);
+	router.init(scriptsInit, scriptsDestroy);
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

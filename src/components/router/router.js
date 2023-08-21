@@ -1,23 +1,15 @@
 import barba from '@barba/core';
 
 function init(scriptsInit, scriptsDestroy) {
-	// eslint-disable-next-line no-unused-vars
 	barba.hooks.beforeLeave(({current}) => {
-		// можно добавить анимацию перед уходом со страницы
-	});
-
-	barba.hooks.afterLeave(({current}) => {
 		// отключение обработчиков событий и удаленние их дынных
 		scriptsDestroy.forEach((script) => script(current.container));
+		// можно добавить анимацию перед уходом со страницы
 	});
 
 	barba.hooks.beforeEnter(({next}) => {
 		// инициализация скриптов новой страницы
 		scriptsInit.forEach((script) => script(next.container));
-	});
-
-	// eslint-disable-next-line no-unused-vars
-	barba.hooks.afterEnter(({next}) => {
 		// можно добавить анимацию появления страницы
 	});
 
