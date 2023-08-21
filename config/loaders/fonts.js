@@ -6,9 +6,9 @@
  * @see https://webpack.js.org/loaders/
  */
 export const fonts = {
-    test: /\.(woff(2)?|eot|ttf|otf|)$/,
-    type: 'asset/resource',
-    generator: {
-        filename: 'assets/fonts/[name].[hash:8][ext]',
-    },
+	test: /\.(woff(2)?|eot|ttf|otf|)$/,
+	type: 'asset/resource',
+	generator: {
+		filename: 'assets/fonts/[name][ext]',
+	},
 };

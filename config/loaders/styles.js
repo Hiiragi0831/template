@@ -11,9 +11,21 @@ import { isDev } from '../store';
  */
 
 export const styles = {
-    test: /\.(sa|sc|c)ss$/,
-    use: [isDev() ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-    generator: {
-        filename: 'assets/styles/[name].[hash:8][ext]',
-    },
+	test: /\.(sa|sc|c)ss$/,
+	use: [
+		isDev() ? 'style-loader' : MiniCssExtractPlugin.loader,
+		'css-loader',
+		'postcss-loader',
+		{
+			loader: 'sass-loader',
+			options: {
+				sassOptions: {
+					outputStyle: "expanded",
+				},
+			},
+		},
+	],
+	generator: {
+		filename: 'assets/styles/[name][ext]',
+	},
 };

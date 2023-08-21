@@ -6,10 +6,10 @@
  */
 
 export const scripts = {
-    test: /\.(js|ts)$/,
-    exclude: /node_modules/,
-    use: 'babel-loader',
-    generator: {
-        filename: 'assets/javascript/[name].[hash:8][ext]',
-    },
+	test: /\.(js|ts)$/,
+	exclude: /node_modules/,
+	use: 'babel-loader',
+	generator: {
+		filename: 'assets/javascript/[name][ext]',
+	},
 };

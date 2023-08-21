@@ -12,12 +12,10 @@ import {isDevices} from '@scripts/helpers/index';
 import lazyLoad from '@scripts/modules/lazy-load';
 import scrollToAnchor from './modules/scrollToAnchor';
 import lazyBlur from './modules/lazyBlur';
-import analytics from '@components/analytics/analytics';
 import router from '@components/router/router';
 import home from '../pages/home/home';
 import article from '../pages/article/article';
 import sharing from '../components/sharing/sharing';
-import demoRbc from '../pages/demo-rbc/demoRbc';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -47,17 +45,15 @@ const scriptsInit = [
 	lazyLoad.init,
 	scrollToAnchor.init,
 	lazyBlur.init,
-	analytics.init,
 	sharing.init,
 
-	demoRbc.init,
 	home.init,
 	article.init,
 ];
 
 // добавить скрипты для удаленния данных при уходе
 const scriptsDestroy = [
-	demoRbc.destroy,
+
 ];
 
 const init = () => {
