@@ -1,2 +1,5 @@
+- var dataHeader = require('data.js').default;
 header.header
 	h2 header
+	each item in dataHeader
+		a(href=item.link)!= item.title
