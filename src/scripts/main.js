@@ -12,7 +12,7 @@ import {isDevices} from '@scripts/helpers/index';
 import lazyLoad from '@scripts/modules/lazy-load';
 import scrollToAnchor from './modules/scrollToAnchor';
 import lazyBlur from './modules/lazyBlur';
-import router from '@components/router/router';
+// import router from '@components/router/router';
 import home from '../pages/home/home';
 import article from '../pages/article/article';
 import sharing from '../components/sharing/sharing';
@@ -40,28 +40,28 @@ const resize = () => {
 };
 
 // добавить скрипты для инициализации при переходах
-const scriptsInit = [
-	// активируем нужные модули которые будут использоваться и которые должны обновлять при переходах между страницами
-	lazyLoad.init,
-	scrollToAnchor.init,
-	lazyBlur.init,
-	sharing.init,
-
-	home.init,
-	article.init,
-];
-
+// const scriptsInit = [
+// 	// активируем нужные модули которые будут использоваться и которые должны обновлять при переходах между страницами
+// ];
+//
 // добавить скрипты для удаленния данных при уходе
-const scriptsDestroy = [
-
-];
+// const scriptsDestroy = [
+//
+// ];
 
 const init = () => {
 	uaParser.init();
 	actualYear.init();
 	vhFix.init();
+	lazyLoad.init();
+	scrollToAnchor.init();
+	lazyBlur.init();
+	sharing.init();
+
+	home.init();
+	article.init();
 	// закоментировать или удалить если SPA поведение не требуется
-	router.init(scriptsInit, scriptsDestroy);
+	// router.init(scriptsInit, scriptsDestroy);
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

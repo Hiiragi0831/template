@@ -1,9 +1,11 @@
-function init(container) {
-	if (container.classList.contains('article')) {
-		// eslint-disable-next-line no-console
-		console.log('article init');
+const init = () => {
+	if (!document.querySelector('.article')) {
+		return;
 	}
-}
+
+	// eslint-disable-next-line no-console
+	console.log('article init');
+};
 
 export default {
 	init,

@@ -6,14 +6,15 @@ append globals
 append vars
 
 block content
-	+router(pageName)
+	.site
 		.home
 			include @components/header/header
-			h1 Index.html
-			a(href="./article") article
+			main
+				h1 Index.html
+				a(href="./article") article
+				+lazyBlur({
+					imgS: `${baseDir}assets/images/home/section-1/1.jpg`,
+					imgL: `${baseDir}assets/images/home/section-1/1.jpg`,
+				})
+				+sharing('vk')
 			include @components/footer/footer
-			+lazyBlur({
-				imgS: `${baseDir}assets/images/home/section-1/1.jpg`,
-				imgL: `${baseDir}assets/images/home/section-1/1.jpg`,
-			})
-			+sharing('vk')

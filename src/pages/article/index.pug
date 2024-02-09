@@ -7,7 +7,9 @@ append vars
 
 block content
 	+router(pageName)
-		include @components/header/header
-		h1 Article.html
-		a(href="./") home page
-		include @components/footer/footer
+		.article
+			include @components/header/header
+			main
+				h1 Article.html
+				a(href="./") home page
+			include @components/footer/footer
